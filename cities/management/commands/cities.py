@@ -165,7 +165,7 @@ class Command(BaseCommand):
                 try:
                     func = getattr(plugin, hook)
                     result = func(self, *args, **kwargs)
-                    if not (result != False):
+                    if not (result and result != None):
                         return False
 
                 except HookException as e:
